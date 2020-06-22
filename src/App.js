@@ -27,7 +27,7 @@ const App = (props) => {
                 <Link to="/search"> Movie Search </Link>
               </li>
               <li>
-                <Link to="/library"> Library </Link>
+                <Link to="/library"> Rental Library </Link>
               </li>
             </ul>
           </nav>
@@ -37,7 +37,7 @@ const App = (props) => {
               <MovieSearch url="http://localhost:3000/" />
             </Route>
             <Route path="/library">
-              <Library />
+              <RentalLibrary />
             </Route>
             <Route path="/">
               <Home />
@@ -58,9 +58,19 @@ function Home() {
 }
 
 
-function Library() {
+
+function RentalLibrary() {
+
+ 
+  const [library, setLibrary] = useState([]);
+
+  let newLibrary = [...library]
+  newLibrary.push(movie)
+
+  setLibrary(newLibrary)
+
   return (
-  <h1> hello </h1>
+    
   );
 }
 

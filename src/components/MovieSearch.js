@@ -29,11 +29,13 @@ const MovieSearch = (props) => {
     })
     
   }
-
-  
-
   return (
+
+
     <div>
+
+      <div> 
+      </div>
        <form className="form" onSubmit={searchMovies}>
         <label className="label" htmlFor="query">Enter Movie Name:</label>
         <input className="input" type="text" name="query" placeholder="Movie Title" value={query} onChange={ (e) => setQuery(e.target.value)} /> 
@@ -41,7 +43,7 @@ const MovieSearch = (props) => {
       </form> 
       <div className="card-list"> 
         { movies.map(movie => (
-            <MovieCard movie={movie} key={movie.external_id}/>
+            <MovieCard movie={movie} key={movie.external_id} url={props.url}/>
         ))}
      </div>
 

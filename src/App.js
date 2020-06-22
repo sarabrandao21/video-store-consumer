@@ -9,10 +9,12 @@ import {
   Link
 } from "react-router-dom";
 import MovieSearch from './components/MovieSearch';
+import Library from './components/Library';
+import Home from './components/Home';
 
-class App extends Component {
+const App = () => {
   
-    render () {
+    return  (
       <Router>
         <div>
           <nav>
@@ -42,7 +44,7 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-    };
+    );
   
   }
 

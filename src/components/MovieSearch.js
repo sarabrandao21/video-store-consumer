@@ -27,7 +27,7 @@ const MovieSearch = (props) => {
   // }
   return (
     <div>
-      <form className="form" onSubmit={searchMovies}>
+      <form className="form" >
         <label className="label" htmlFor="query">Movie Name</label>
         <input className="input" type="text" name="query" placeholder="Movie Title" value={query} onChange={ (e) => setQuery(e.target.value)} /> 
         <button className="button" type="submit">Search </button>

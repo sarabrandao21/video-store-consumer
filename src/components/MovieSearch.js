@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import MovieCard from "./MovieCard"
 
@@ -22,6 +22,7 @@ const MovieSearch = (props) => {
     
     axios.get(`${props.url}${END_POINT}${query}`)
     .then((response)=> {
+      console.log(response.data);
       setMovies(response.data);
     }).catch((error) => {
       console.log("here");
@@ -37,6 +38,14 @@ const MovieSearch = (props) => {
         <input className="input" type="text" name="query" placeholder="Movie Title" value={query} onChange={ (e) => setQuery(e.target.value)} /> 
         <button className="button" type="submit">Search </button>
       </form> 
+      <div className="card-list"> 
+        { movies.filter(movie => movie.poster_path).map(movie => (
+            <MovieCard movie={movie}/>
+        ))}
+     </div>
+
+
+
     </div>
   );
     

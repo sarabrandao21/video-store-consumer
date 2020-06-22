@@ -25,11 +25,12 @@ const MovieSearch = (props) => {
       console.log(response.data);
       setMovies(response.data);
     }).catch((error) => {
-      console.log("here");
+      setErrorMessage(error);
     })
     
   }
 
+  
 
   return (
     <div>
@@ -39,8 +40,8 @@ const MovieSearch = (props) => {
         <button className="button" type="submit">Search </button>
       </form> 
       <div className="card-list"> 
-        { movies.filter(movie => movie.poster_path).map(movie => (
-            <MovieCard movie={movie}/>
+        { movies.map(movie => (
+            <MovieCard movie={movie} key={movie.external_id}/>
         ))}
      </div>
 

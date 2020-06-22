@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import MovieSearch from './components/MovieSearch';
-import Library from './components/Library';
-import Home from './components/Home';
 
-const App = () => {
-  
+import logo from './logo.svg';
+import './App.css';
+
+
+import MovieSearch from './components/MovieSearch';
+
+
+const App = (props) => {
+ 
     return  (
-      <Router>
+      <div> 
+       <Router>
         <div>
           <nav>
             <ul>
@@ -23,17 +25,17 @@ const App = () => {
                 <Link to="/"> Home </Link>
               </li>
               <li>
-                <Link to="/search"> About </Link>
+                <Link to="/search"> Movie Search </Link>
               </li>
               <li>
-                <Link to="/library"> Users </Link>
+                <Link to="/library"> Library </Link>
               </li>
             </ul>
           </nav>
   
-          <Switch>
+           <Switch>
             <Route path="/search">
-              <MovieSearch url="" />
+              <MovieSearch url="http://localhost:3000/" />
             </Route>
             <Route path="/library">
               <Library />
@@ -41,11 +43,28 @@ const App = () => {
             <Route path="/">
               <Home />
             </Route>
-          </Switch>
+          </Switch> 
         </div>
-      </Router>
+      </Router> 
+      </div>
     );
-  
-  }
+    
+};
+
+
+function Home() {
+  return (
+  <h1> hello </h1>
+  );
+}
+
+
+function Library() {
+  return (
+  <h1> hello </h1>
+  );
+}
 
 export default App;
+
+

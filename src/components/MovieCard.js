@@ -9,23 +9,20 @@ export default function MovieCard(props) {
 
     
         
-    axios.post(`${props.url}/rentals/${movie.title}/check-out`, {
+    // axios.post(`${props.url}/rentals/${movie.title}/check-out`, {
 
-    })
-     .then((response)=> {
-      console.log(response.data);
+    // })
+    //  .then((response)=> {
+    //   console.log(response.data);
        
-     }).catch((error) => {
-       setErrorMessage(error);
-     })
+    //  }).catch((error) => {
+    //    setErrorMessage(error);
+    //  })
 
-     props.AddToLibraryCallback(movie)
+    //  props.AddToLibraryCallback(movie)
 
-    }
-
-
-
-  
+    
+  }
 
 
   return (
@@ -36,10 +33,9 @@ export default function MovieCard(props) {
       <p><small>RELEASE DATE: {props.movie.release_date}</small></p>
       <p> Overview: {props.movie.overview}</p>
     </div>
-    <button onClick={checkout(props.movie)}> Add to Library </button> 
+    <button onClick={() => checkout(props.movie)}> Add to Library </button> 
   </div>
   );
 }
-
 
 

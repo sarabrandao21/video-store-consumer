@@ -1,6 +1,6 @@
 
 * {
-  font-family: "Courier New", Courier, monospace;
+  font-family: Noto Sans, sans-serif;
   background-color: black;
   color:white;
 }
@@ -36,6 +36,10 @@ a {
 .app-header {
   margin-top: 5%;
   text-align: center;
+}
+.home-header > *{
+  background-color: transparent;
+  color: lightgray;
 }
 
 

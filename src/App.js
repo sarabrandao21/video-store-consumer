@@ -33,7 +33,7 @@ const App = (props) => {
 
     return  (
      
-      <div> 
+      <div className="app"> 
          <h1 className="app-header"> Video Store Inventory Tracker  </h1>
        <Router>
         <div>

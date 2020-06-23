@@ -31,13 +31,10 @@ const App = (props) => {
       
     }, []); //library needs to go in the array 
 
-
-
-
-
- 
     return  (
-      <div> 
+     
+      <div className="app"> 
+         <h1 className="app-header"> Video Store Inventory Tracker  </h1>
        <Router>
         <div>
           <nav>
@@ -83,9 +80,11 @@ const App = (props) => {
 };
 
 function Home() {
-
   return (
-  <h1> ? </h1>
+    <div className="home-header"> 
+      <h1> Welcome to a Video Store Inventory Tracker </h1>
+      <p> rental store inventory management tool </p>
+    </div>
   );
 }
 

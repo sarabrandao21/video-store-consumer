@@ -1,11 +1,17 @@
 
 
 .customer-card{
-  width: 50%;
+  border: 1px white solid;
   display: grid;
   grid-template-columns: 60% 40%;
+  padding: 3%;
+  margin: 5%;
 }
 
 .acct-info {
   margin-top: 5%;
+}
+.card-list{
+  display: grid;
+  grid-tempate-columns: 1fr 1fr;
 }

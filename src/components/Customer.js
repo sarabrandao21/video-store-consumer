@@ -3,16 +3,6 @@ import './Customer.css'
 
 const Customer = (props) => {
 
-//   account_credit: 13.15
-// address: "Ap #292-5216 Ipsum Rd."
-// city: "Hillsboro"
-// id: 1
-// movies_checked_out_count: 0
-// name: "Shelley Rocha"
-// phone: "(322) 510-8695"
-// postal_code: "24309"
-// registered_at: "2015-04-29T14:54:14.000Z"
-// state: "OR"
 
   return (
   

@@ -6,24 +6,9 @@ export default function MovieCard(props) {
 
 
   const checkout = (movie) => {
-
-    
-        
-    // axios.post(`${props.url}/rentals/${movie.title}/check-out`, {
-
-    // })
-    //  .then((response)=> {
-    //   console.log(response.data);
-       
-    //  }).catch((error) => {
-    //    setErrorMessage(error);
-    //  })
-
-    //  props.AddToLibraryCallback(movie)
-
-    
   }
 
+  //on click callback, in the rental library we need to check if the movie exist 
 
   return (
   <div className="card">
@@ -33,7 +18,7 @@ export default function MovieCard(props) {
       <p><small>RELEASE DATE: {props.movie.release_date}</small></p>
       <p> Overview: {props.movie.overview}</p>
     </div>
-    <button onClick={() => checkout(props.movie)}> Add to Library </button> 
+  {props.showAddToLibrary  && <button onClick={() => checkout(props.movie)}> Add to Library </button>} 
   </div>
   );
 }

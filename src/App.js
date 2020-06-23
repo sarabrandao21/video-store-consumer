@@ -28,7 +28,7 @@ const App = (props) => {
 
           <Switch>
             <Route path="/search">
-              <MovieSearch url="http://localhost:3000/" />
+              <MovieSearch />
             </Route>
             <Route path="/library">
               <RentalLibrary />

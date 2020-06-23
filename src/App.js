@@ -5,8 +5,31 @@ import "./App.css";
 
 import MovieSearch from "./components/MovieSearch";
 import RentalLibrary from "./components/RentalLibrary"
-
+import axios from 'axios';
+//should I keep data in a higher level? anytime need to share data needs to be in a higher level
+//to manipule the data I send it a callback(function) that would change what i need, give argument through the child 
+//but run in the parent 
+//when updating the parent data, you update every else, because you send a reference of the data to children
 const App = (props) => {
+  const URL = "http://localhost:3000/"
+  const [library, setLibrary] = useState([]);
+  const [error, setErrorMessage] = useState([]);
+    
+  const addMovie = (check_movie) => {
+    //if check_movie does not include in library, setLibrary
+  };
+  useEffect(() => {
+    axios
+      .get(`${URL}/movies`)
+      .then((response)=> {
+        console.log(response.data);
+        setLibrary(response.data); //
+      })
+      .catch((error) => {
+        setErrorMessage(error);
+      });
+      
+    }, []); //library needs to go in the array 
 
   return (
     <div>
@@ -28,10 +51,10 @@ const App = (props) => {
 
           <Switch>
             <Route path="/search">
-              <MovieSearch />
+              <MovieSearch url={URL}/>
             </Route>
             <Route path="/library">
-              <RentalLibrary />
+              <RentalLibrary library={library} addMovieCallback={addMovie}/>
             </Route>
             <Route path="/">
               <Home />

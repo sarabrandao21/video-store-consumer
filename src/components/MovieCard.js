@@ -4,12 +4,7 @@ import axios from 'axios';
 
 export default function MovieCard(props) {
 
-
-  const checkout = (movie) => {
-  }
-
-  //on click callback, in the rental library we need to check if the movie exist 
-
+ 
   return (
   <div className="card">
     <img className="card--image" src={`${props.movie.image_url}`} alt={props.movie.title}/>
@@ -18,7 +13,7 @@ export default function MovieCard(props) {
       <p><small>RELEASE DATE: {props.movie.release_date}</small></p>
       <p> Overview: {props.movie.overview}</p>
     </div>
-  {props.showAddToLibrary  && <button onClick={() => checkout(props.movie)}> Add to Library </button>} 
+  {props.showAddToLibrary && <button onClick={props.addMovieCallback(props.movie)}> Add to Library </button>} 
   </div>
   );
 }

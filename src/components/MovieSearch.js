@@ -45,11 +45,6 @@ const END_POINT = 'movies?query=';
     
 }
 
-// Board.propTypes = {
-//   url: PropTypes.string,
-//   boardName: PropTypes.string,
-// };
-
 MovieSearch.propTypes = {
 
 }

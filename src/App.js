@@ -1,21 +1,19 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+
+
+import RentalLibrary from "./components/RentalLibrary"
 import './App.css';
-
 import MovieSearch from './components/MovieSearch';
 import CustomerList from './components/CustomerList';
 
+
 const App = (props) => {
- 
-    return  (
-      <div> 
-       <Router>
+
+  return (
+    <div>
+      <Router>
         <div>
           <nav>
             <ul>
@@ -33,8 +31,8 @@ const App = (props) => {
               </li>
             </ul>
           </nav>
-  
-           <Switch>
+
+          <Switch>
             <Route path="/search">
               <MovieSearch url="http://localhost:3000/" />
             </Route>
@@ -44,41 +42,28 @@ const App = (props) => {
             <Route path="/">
               <Home />
             </Route>
+          </Switch>
             <Route path="/customers">
               <CustomerList url="http://localhost:3000/"/>
             </Route>
           </Switch> 
+
         </div>
-      </Router> 
-      </div>
-    );
-    
+      </Router>
+    </div>
+  );
 };
 
-
 function Home() {
-  return (
-  <h1> hello </h1>
+
+  return (<h1> hello </h1>);
+
   );
 }
 
 
 
-function RentalLibrary() {
 
- 
-  // const [library, setLibrary] = useState([]);
-
-  // let newLibrary = [...library]
-  // newLibrary.push(movie)
-
-  // setLibrary(newLibrary)
-
-  return (
-    <div> hi</div>
-  );
 }
 
 export default App;
-
-

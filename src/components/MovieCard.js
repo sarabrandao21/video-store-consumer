@@ -27,7 +27,7 @@ export default function MovieCard(props) {
 
   return (
   <div className="card">
-    <img className="card--image" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${props.movie.poster_path}`} alt={props.movie.title}/>
+    <img className="card--image" src={`${props.movie.image_url}`} alt={props.movie.title}/>
     <div className="class-content"> 
       <h2 className='card--title'> {props.movie.title} </h2>
       <p><small>RELEASE DATE: {props.movie.release_date}</small></p>

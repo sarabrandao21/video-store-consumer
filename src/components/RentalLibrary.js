@@ -7,8 +7,7 @@ function RentalLibrary() {
     const URL = "http://localhost:3000/"
     const [library, setLibrary] = useState([]);
     const [error, setErrorMessage] = useState([]);
-    //let newLibrary = [...library];
-    // newLibrary.push(movie)
+    
     useEffect(() => {
       axios
         .get(`${URL}/movies`)
@@ -21,8 +20,6 @@ function RentalLibrary() {
         });
         
       }, []);
-    // setLibrary(newLibrary) //if set state in the render gets an infinite loop
-    //get movies using external api
     return (
     <div>
         <p>Movies:</p>

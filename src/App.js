@@ -9,11 +9,11 @@ import MovieSearch from './components/MovieSearch';
 import CustomerList from './components/CustomerList';
 
 
-const App = (props) => {
-
-  return (
-    <div>
-      <Router>
+const App = () => {
+ 
+    return  (
+      <div> 
+       <Router>
         <div>
           <nav>
             <ul>
@@ -36,17 +36,20 @@ const App = (props) => {
             <Route path="/search">
               <MovieSearch url="http://localhost:3000/" />
             </Route>
+            
             <Route path="/library">
               <RentalLibrary />
             </Route>
+
+            <Route path="/customers">
+              <CustomerList url="http://localhost:3000/" />
+            </Route>
+
             <Route path="/">
               <Home />
             </Route>
-          </Switch>
-            <Route path="/customers">
-              <CustomerList url="http://localhost:3000/"/>
-            </Route>
-          </Switch> 
+      
+         </Switch> 
 
         </div>
       </Router>
@@ -56,14 +59,15 @@ const App = (props) => {
 
 function Home() {
 
-  return (<h1> hello </h1>);
-
+  return (
+  <h1> ? </h1>
   );
 }
 
 
 
 
-}
+
+
 
 export default App;

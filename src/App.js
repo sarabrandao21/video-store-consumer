@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import "./App.css";
-
-import MovieSearch from "./components/MovieSearch";
 import RentalLibrary from "./components/RentalLibrary"
 import axios from 'axios';
 //should I keep data in a higher level? anytime need to share data needs to be in a higher level
@@ -31,9 +28,17 @@ const App = (props) => {
       
     }, []); //library needs to go in the array 
 
-  return (
-    <div>
-      <Router>
+import './App.css';
+import MovieSearch from './components/MovieSearch';
+import CustomerList from './components/CustomerList';
+
+
+
+const App = () => {
+ 
+    return  (
+      <div> 
+       <Router>
         <div>
           <nav>
             <ul>
@@ -46,6 +51,9 @@ const App = (props) => {
               <li>
                 <Link to="/library"> Rental Library </Link>
               </li>
+              <li>
+                <Link to="/customers"> Customers </Link>
+              </li>
             </ul>
           </nav>
 
@@ -53,13 +61,21 @@ const App = (props) => {
             <Route path="/search">
               <MovieSearch url={URL}/>
             </Route>
+            
             <Route path="/library">
               <RentalLibrary library={library} addMovieCallback={addMovie}/>
             </Route>
+
+            <Route path="/customers">
+              <CustomerList url={URL}/>
+            </Route>
+
             <Route path="/">
               <Home />
             </Route>
-          </Switch>
+      
+         </Switch> 
+
         </div>
       </Router>
     </div>
@@ -67,7 +83,16 @@ const App = (props) => {
 };
 
 function Home() {
-  return (<h1> hello </h1>);
+
+  return (
+  <h1> ? </h1>
+  );
 }
+
+
+
+
+
+
 
 export default App;

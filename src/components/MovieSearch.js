@@ -7,6 +7,9 @@ const MovieSearch = () => {
   const URL = "http://localhost:3000/movies?query=";
 
 
+const MovieSearch = (props) => {
+const END_POINT = 'movies?query=';
+
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [error, setErrorMessage] = useState([]);
@@ -17,16 +20,14 @@ const MovieSearch = () => {
 
     axios.get(`${URL}${query}`)
     .then((response)=> {
-      console.log(response.data);
       setMovies(response.data);
     }).catch((error) => {
       setErrorMessage(error);
+      console.log(error);
     })
     
   }
   return (
-
-
     <div>
 
        <form className="form" onSubmit={searchMovies}>
@@ -40,11 +41,9 @@ const MovieSearch = () => {
         ))}
      </div>
 
-
     </div>
   );
     
-  
 }
 
 // Board.propTypes = {

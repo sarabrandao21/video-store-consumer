@@ -4,7 +4,6 @@ import axios from 'axios';
 
 export default function MovieCard(props) {
 
- 
   return (
   <div className="card">
     <img className="card--image" src={`${props.movie.image_url}`} alt={props.movie.title}/>

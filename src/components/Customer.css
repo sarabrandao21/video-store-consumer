@@ -1,0 +1,11 @@
+
+
+.customer-card{
+  width: 50%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.acct-info {
+  margin-top: 5%;
+}

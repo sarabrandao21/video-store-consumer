@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import RentalLibrary from "./components/RentalLibrary"
 import axios from 'axios';
+import './App.css';
+import MovieSearch from './components/MovieSearch';
+import CustomerList from './components/CustomerList';
 //should I keep data in a higher level? anytime need to share data needs to be in a higher level
 //to manipule the data I send it a callback(function) that would change what i need, give argument through the child 
 //but run in the parent 
@@ -28,13 +31,10 @@ const App = (props) => {
       
     }, []); //library needs to go in the array 
 
-import './App.css';
-import MovieSearch from './components/MovieSearch';
-import CustomerList from './components/CustomerList';
 
 
 
-const App = () => {
+
  
     return  (
       <div> 
@@ -88,11 +88,5 @@ function Home() {
   <h1> ? </h1>
   );
 }
-
-
-
-
-
-
 
 export default App;

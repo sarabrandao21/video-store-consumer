@@ -3,11 +3,10 @@ import axios from "axios";
 import MovieCard from "./MovieCard";
 
 
-const MovieSearch = () => {
+const MovieSearch = (props) => {
   const URL = "http://localhost:3000/movies?query=";
 
 
-const MovieSearch = (props) => {
 const END_POINT = 'movies?query=';
 
   const [query, setQuery] = useState('');

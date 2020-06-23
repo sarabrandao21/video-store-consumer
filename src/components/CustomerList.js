@@ -3,7 +3,7 @@ import Customer from './Customer';
 import axios from 'axios';
 
 
-
+import './Customer.css'
 
 const CustomerList = (props) => {
 

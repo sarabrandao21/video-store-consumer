@@ -1,26 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 * {
   font-family: "Courier New", Courier, monospace;
   background-color: black;
@@ -37,7 +15,6 @@ ul {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 90%;
   padding: 5% 0 5% 5%;
-  color: black;
   text-align: center;
 }
 li {
@@ -52,11 +29,14 @@ a {
   text-align: center;
   background-image: url('./img/background.jpg');
   height: 100%;
-  color: lightgray;
   padding:10%;
+  background-color: !important;
 }
+
 .app-header {
   margin-top: 5%;
   text-align: center;
 }
+
+
 

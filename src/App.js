@@ -8,9 +8,8 @@ import {
 
 import './App.css';
 
-
 import MovieSearch from './components/MovieSearch';
-
+import CustomerList from './components/CustomerList';
 
 const App = (props) => {
  
@@ -30,7 +29,7 @@ const App = (props) => {
                 <Link to="/library"> Rental Library </Link>
               </li>
               <li>
-                <Link to="/"> Customers </Link>
+                <Link to="/customers"> Customers </Link>
               </li>
             </ul>
           </nav>
@@ -46,7 +45,7 @@ const App = (props) => {
               <Home />
             </Route>
             <Route path="/customers">
-              <CustomerList />
+              <CustomerList url="http://localhost:3000/"/>
             </Route>
           </Switch> 
         </div>

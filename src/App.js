@@ -67,15 +67,15 @@ function Home() {
 function RentalLibrary() {
 
  
-  const [library, setLibrary] = useState([]);
+  // const [library, setLibrary] = useState([]);
 
-  let newLibrary = [...library]
-  newLibrary.push(movie)
+  // let newLibrary = [...library]
+  // newLibrary.push(movie)
 
-  setLibrary(newLibrary)
+  // setLibrary(newLibrary)
 
   return (
-    
+    <div> hi</div>
   );
 }
 

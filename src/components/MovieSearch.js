@@ -12,10 +12,6 @@ const MovieSearch = (props) => {
   const [movies, setMovies] = useState([]);
   const [error, setErrorMessage] = useState([]);
 
-  //GET /movies?query=<search term>
-
-
-
   const searchMovies = (e) => {
     e.preventDefault();
 

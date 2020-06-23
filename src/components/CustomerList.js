@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Customer from './Customer';
+import axios from 'axios';
 
-END_POINT = 'customers'
+
+
 
 const CustomerList = (props) => {
+
 
   const [customers, setCustomers] = useState([]);
   const [error, setErrorMessage] = useState([]);
 
 
-    axios.get(`${props.url}${END_POINT}`)
+    axios.get(`${props.url}customers`)
     .then((response)=> {
       setCustomers(response.data);
     }).catch((error) => {
       setErrorMessage(error);
       console.log(error);
     })
-    
-  
+   
   return (
     <div className="card-list"> 
         { customers.map(customer => (
@@ -24,6 +27,6 @@ const CustomerList = (props) => {
         ))}
     </div>
   );
-
-
 }
+
+export default CustomerList; 

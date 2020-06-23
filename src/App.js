@@ -23,6 +23,9 @@ const App = (props) => {
               <li>
                 <Link to="/library"> Rental Library </Link>
               </li>
+              <li>
+                <Link to="/"> Customers </Link>
+              </li>
             </ul>
           </nav>
 
@@ -37,6 +40,11 @@ const App = (props) => {
               <Home />
             </Route>
           </Switch>
+            <Route path="/customers">
+              <CustomerList />
+            </Route>
+          </Switch> 
+
         </div>
       </Router>
     </div>

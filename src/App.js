@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import "./App.css";
 
-import MovieSearch from "./components/MovieSearch";
+
 import RentalLibrary from "./components/RentalLibrary"
+import './App.css';
+import MovieSearch from './components/MovieSearch';
+import CustomerList from './components/CustomerList';
+
 
 const App = (props) => {
 
@@ -24,7 +27,7 @@ const App = (props) => {
                 <Link to="/library"> Rental Library </Link>
               </li>
               <li>
-                <Link to="/"> Customers </Link>
+                <Link to="/customers"> Customers </Link>
               </li>
             </ul>
           </nav>
@@ -41,7 +44,7 @@ const App = (props) => {
             </Route>
           </Switch>
             <Route path="/customers">
-              <CustomerList />
+              <CustomerList url="http://localhost:3000/"/>
             </Route>
           </Switch> 
 
@@ -52,7 +55,15 @@ const App = (props) => {
 };
 
 function Home() {
+
   return (<h1> hello </h1>);
+
+  );
+}
+
+
+
+
 }
 
 export default App;

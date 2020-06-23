@@ -5,24 +5,7 @@ import axios from 'axios';
 export default function MovieCard(props) {
 
 
-  const checkout = (movie) => {
-
-    
-        
-    // axios.post(`${props.url}/rentals/${movie.title}/check-out`, {
-
-    // })
-    //  .then((response)=> {
-    //   console.log(response.data);
-       
-    //  }).catch((error) => {
-    //    setErrorMessage(error);
-    //  })
-
-    //  props.AddToLibraryCallback(movie)
-
-    
-  }
+  
 
 
   return (

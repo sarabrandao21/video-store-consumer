@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard"
 
 
 const MovieSearch = (props) => {
-  const END_POINT = "movies?query=";
+  const END_POINT = 'movies?query=';
 
   //states 
   const [query, setQuery] = useState('');
@@ -12,28 +12,23 @@ const MovieSearch = (props) => {
   const [movies, setMovies] = useState([]);
   const [error, setErrorMessage] = useState([]);
 
-  //GET /movies?query=<search term>
-
-
-
   const searchMovies = (e) => {
     e.preventDefault();
 
     
     axios.get(`${props.url}${END_POINT}${query}`)
     .then((response)=> {
-      console.log(response.data);
       setMovies(response.data);
     }).catch((error) => {
       setErrorMessage(error);
+      console.log(error);
     })
+
+  
     
   }
   return (
-
-
     <div>
-
       <div> 
       </div>
        <form className="form" onSubmit={searchMovies}>
@@ -46,9 +41,6 @@ const MovieSearch = (props) => {
             <MovieCard movie={movie} key={movie.external_id} url={props.url}/>
         ))}
      </div>
-
-
-
     </div>
   );
     

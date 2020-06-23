@@ -36,7 +36,7 @@ const END_POINT = 'movies?query=';
       </form> 
       <div className="card-list"> 
         { movies.map(movie => (
-            <MovieCard movie={movie} key={movie.external_id} showAddToLibrary />
+            <MovieCard movie={movie} key={movie.external_id} showAddToLibrary addMovieCallback={props.addMovieCallback}/>
         ))}
      </div>
 

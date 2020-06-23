@@ -17,6 +17,16 @@ const App = (props) => {
     
   const addMovie = (check_movie) => {
     //if check_movie does not include in library, setLibrary
+    //post? 
+    for (let i = 0; i < library.length; i++) {
+      if (check_movie.title === library[i].title) {
+        return 
+      };
+    }
+    let new_library = [...library];
+    new_library.push(check_movie);
+
+    setLibrary(new_library);
   };
   useEffect(() => {
     axios
@@ -31,11 +41,6 @@ const App = (props) => {
       
     }, []); //library needs to go in the array 
 
-
-
-
-
- 
     return  (
       <div> 
        <Router>
@@ -59,11 +64,11 @@ const App = (props) => {
 
           <Switch>
             <Route path="/search">
-              <MovieSearch url={URL}/>
+              <MovieSearch url={URL} addMovieCallback={addMovie}/>
             </Route>
             
             <Route path="/library">
-              <RentalLibrary library={library} addMovieCallback={addMovie}/>
+              <RentalLibrary library={library} />
             </Route>
 
             <Route path="/customers">

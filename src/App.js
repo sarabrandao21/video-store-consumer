@@ -24,6 +24,20 @@ const App = (props) => {
     new_library.push(check_movie);
 
     setLibrary(new_library);
+
+  
+    let date = new Date();
+
+    date.setDate(date.getDate() + 7);
+      useEffect(() => {
+        axios.post(`${URL}${check_movie.title}/check-out`, {
+          due_date: `${date}`
+        }).then((response) => {
+          console.log(response);
+        }).catch((error) => {
+          console.log(error);
+        })
+      }, []);
   };
 
   useEffect(() => {
@@ -91,8 +105,6 @@ const App = (props) => {
 
         </div>
       </Router>
-
-
     </div>
   );
 };

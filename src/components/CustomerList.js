@@ -23,7 +23,6 @@ const CustomerList = (props) => {
     });
     }, []);
   
-   
 
   return (
     <div className="card-list"> 

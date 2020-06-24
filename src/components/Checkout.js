@@ -23,7 +23,7 @@ const Checkout = (props) => {
           return (
               <div>
                 <h1>Thank you, {props.customer.name}</h1>
-                <p>{props.movie.title.toString()} due by {date.toString()}</p>
+                <p>You checked out {props.movie.title.toString()} due by {date.toString()}</p>
             
               </div>
           );

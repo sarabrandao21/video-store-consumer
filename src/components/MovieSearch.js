@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import './MovieSearch.css';
 
 
 const MovieSearch = (props) => {
@@ -30,16 +31,15 @@ const END_POINT = 'movies?query=';
     <div>
 
        <form className="form" onSubmit={searchMovies}>
-        <label className="label" htmlFor="query">Enter Movie Name:</label>
+        <label className="label" htmlFor="query">Search Movies:</label>
         <input className="input" type="text" name="query" placeholder="Movie Title" value={query} onChange={ (e) => setQuery(e.target.value)} /> 
         <button className="button" type="submit">Search </button>
-      </form> 
+       </form> 
       <div className="card-list"> 
         { movies.map(movie => (
             <MovieCard movie={movie} key={movie.external_id} showAddToLibrary addMovieCallback={props.addMovieCallback}/>
         ))}
      </div>
-
     </div>
   );
     

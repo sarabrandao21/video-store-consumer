@@ -14,12 +14,6 @@ const App = (props) => {
   const [customer, setCustomer] = useState({});
   const [movie, setMovie] = useState({});
 
-
-
-  
-
-
-
   const addMovie = (check_movie) => {
     for (let i = 0; i < library.length; i++) {
       if (check_movie.title === library[i].title) {
@@ -44,7 +38,7 @@ const App = (props) => {
       });
     }, []); 
 
-
+   
     return  (
      
       <div className="app"> 
@@ -69,7 +63,7 @@ const App = (props) => {
           </nav>
 
           <section className="current-selected"> 
-            <p> Selected Customer: {customer.name}</p>
+             <p> Selected Customer: {customer.name}</p> 
             <div> 
               <p> Selected Movie: {movie.title}</p>
               <img className="movie-card--image" src={`${movie.image_url}`} alt={movie.title} width="60px" height="80px"/>

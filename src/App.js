@@ -11,7 +11,15 @@ const App = (props) => {
   const URL = "http://localhost:3000/"
   const [library, setLibrary] = useState([]);
   const [error, setErrorMessage] = useState([]);
-    
+  const [customer, setCustomer] = useState({});
+  const [movie, setMovie] = useState({});
+
+
+
+  
+
+
+
   const addMovie = (check_movie) => {
     for (let i = 0; i < library.length; i++) {
       if (check_movie.title === library[i].title) {
@@ -60,17 +68,25 @@ const App = (props) => {
             </ul>
           </nav>
 
+          <section className="current-selected"> 
+            <p> Selected Customer: {customer.name}</p>
+            <div> 
+              <p> Selected Movie: {movie.title}</p>
+              <img className="movie-card--image" src={`${movie.image_url}`} alt={movie.title} width="60px" height="80px"/>
+            </div>
+          </section>
+
           <Switch>
             <Route path="/search">
               <MovieSearch url={URL} addMovieCallback={addMovie}/>
             </Route>
             
             <Route path="/library">
-              <RentalLibrary library={library} />
+              <RentalLibrary library={library} currentMovieCallback={setMovie}/>
             </Route>
 
             <Route path="/customers">
-              <CustomerList url={URL}/>
+              <CustomerList url={URL} currentCustomerCallback={setCustomer}/>
             </Route>
 
             <Route path="/">
@@ -81,6 +97,8 @@ const App = (props) => {
 
         </div>
       </Router>
+
+
     </div>
   );
 };

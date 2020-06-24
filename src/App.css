@@ -48,5 +48,16 @@ a {
   color: lightgray;
 }
 
+.current-selected {
+  float: right;
+  margin-right: 3%;
+}
+
+.current-selected > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-bottom: 5px;
+}
 
 

@@ -12,7 +12,8 @@ export default function MovieCard(props) {
       <p className="subtitle"><small>RELEASE DATE: {props.movie.release_date}</small></p>
       <p className="description"> Overview: {props.movie.overview}</p>
     </div>
-  {props.showAddToLibrary && <button className="add-movie-button"onClick={() => props.addMovieCallback(props.movie)}> Add to Library </button>} 
+    {props.showAddToLibrary && <button className="add-movie-button"onClick={() => props.addMovieCallback(props.movie)}> Add to Library </button>} 
+    <button className="add-movie-button" onClick={() => props.currentMovieCallback(props.movie)}> Select Movie </button>
   </div>
   );
 }

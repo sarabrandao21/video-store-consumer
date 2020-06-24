@@ -28,7 +28,7 @@ const CustomerList = (props) => {
   return (
     <div className="card-list"> 
         { customers.map(customer => (
-            <Customer customer={customer} key={customer.external_id}/>
+            <Customer customer={customer} key={customer.external_id} currentCustomerCallback={props.currentCustomerCallback}/>
         ))}
     </div>
   );

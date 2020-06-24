@@ -7,6 +7,7 @@ import './App.css';
 import MovieSearch from './components/MovieSearch';
 import CustomerList from './components/CustomerList';
 import Checkout from './components/Checkout';
+import Rentals from './components/Rentals'
 
 const App = (props) => {
   const URL = "http://localhost:3000/"
@@ -14,6 +15,14 @@ const App = (props) => {
   const [error, setErrorMessage] = useState([]);
   const [customer, setCustomer] = useState({});
   const [movie, setMovie] = useState({});
+  const [rentals, setRentals] = useState([]);
+  //const [checkInMovie, setCheckInMovie] = useState();
+  
+
+  const setStateEmpty = () => {
+    setMovie({});
+    setCustomer({});
+  }
 
   const addMovie = (check_movie) => {
     for (let i = 0; i < library.length; i++) {
@@ -53,6 +62,26 @@ const App = (props) => {
         setErrorMessage(error);
       });
     }, []); 
+
+    const check_in = (movie_id) => { 
+      
+      let current_movie = ""
+      for(let i = 0; i < library.length; i++){
+        if (library[i].id === movie_id){
+          current_movie = library[i]
+          //setCheckInMovie(library[i])
+          //check_in_movie 
+        } 
+      }
+      
+      axios.post(`${URL}rentals/${current_movie.title}`) 
+          .then((response)=> {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            setErrorMessage(error);
+          }); 
+    }
 
    
     return  (
@@ -103,7 +132,11 @@ const App = (props) => {
             </Route>
 
             <Route path="/checkout">
-              <Checkout movie={movie} customer={customer} url={URL}/>
+              <Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
+            </Route>
+
+            <Route path="/rentals">
+              <Rentals url={URL} checkInCallback={check_in}/>
             </Route>
 
             <Route path="/">

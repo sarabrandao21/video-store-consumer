@@ -30,7 +30,7 @@ const App = (props) => {
         overview: check_movie.overview,
         release_date: check_movie.release_date,
         image_url: check_movie.poster_path,
-        external_id: check_movie.id
+        external_id: check_movie.external_id
       })
       .then((response)=> {
         console.log(response.data);

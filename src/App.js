@@ -6,6 +6,7 @@ import axios from 'axios';
 import './App.css';
 import MovieSearch from './components/MovieSearch';
 import CustomerList from './components/CustomerList';
+import Checkout from './components/Checkout';
 
 const App = (props) => {
   const URL = "http://localhost:3000/"
@@ -25,19 +26,6 @@ const App = (props) => {
 
     setLibrary(new_library);
 
-  
-    let date = new Date();
-
-    date.setDate(date.getDate() + 7);
-      useEffect(() => {
-        axios.post(`${URL}${check_movie.title}/check-out`, {
-          due_date: `${date}`
-        }).then((response) => {
-          console.log(response);
-        }).catch((error) => {
-          console.log(error);
-        })
-      }, []);
   };
 
   useEffect(() => {
@@ -73,6 +61,9 @@ const App = (props) => {
               <li>
                 <Link to="/customers"> Customers </Link>
               </li>
+              <li>
+                <Link to="/checkout"> Checkout </Link>
+              </li>
             </ul>
           </nav>
 
@@ -97,9 +88,15 @@ const App = (props) => {
               <CustomerList url={URL} currentCustomerCallback={setCustomer}/>
             </Route>
 
+            <Route path="/checkout">
+              <Checkout movie={movie} customer={customer} url={URL}/>
+            </Route>
+
             <Route path="/">
               <Home />
             </Route>
+
+            
       
          </Switch> 
 

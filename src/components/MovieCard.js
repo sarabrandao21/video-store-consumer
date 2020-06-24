@@ -3,6 +3,8 @@ import axios from 'axios';
 import './MovieCard.css'
 
 export default function MovieCard(props) {
+
+  //call when the user clicks --- add to the api 
   
   return (
   <div className="movie-card">

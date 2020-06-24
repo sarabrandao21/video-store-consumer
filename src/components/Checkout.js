@@ -18,17 +18,21 @@ const Checkout = (props) => {
         })
       }, []);
 
-      return (
+      if( props.movie.title !== undefined && props.customer.name !== undefined ){
 
+          return (
+              <div>
+                <h1>Thank you, {props.customer.name}</h1>
+                <p>{props.movie.title.toString()} due by {date.toString()}</p>
+            
+              </div>
+          );
+      }else {
 
-          <div>checkout</div>
-
-
-      )
-
-
-
-
+          return (
+            <h1> Select customer and movie for checkout </h1>
+          );
+        }
 }
 
 

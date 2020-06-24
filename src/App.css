@@ -1,7 +1,13 @@
 
 * {
   font-family: Noto Sans, sans-serif;
+}
+body {
   background-color: black;
+  color:white;
+}
+
+a:visited {
   color:white;
 }
 

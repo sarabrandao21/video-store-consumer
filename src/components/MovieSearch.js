@@ -20,6 +20,7 @@ const END_POINT = 'movies?query=';
 
     axios.get(`${URL}${query}`)
     .then((response)=> {
+      console.log(response.data);
       setMovies(response.data);
     }).catch((error) => {
       setErrorMessage(error);

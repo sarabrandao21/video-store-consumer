@@ -21,10 +21,24 @@ const App = (props) => {
         return 
       };
     }
-    let new_library = [...library];
-    new_library.push(check_movie);
+    let new_library = [...library, check_movie];
 
     setLibrary(new_library);
+    axios
+      .post(`${URL}movies/add-movie`, {
+        title: check_movie.title,
+        overview: check_movie.overview,
+        release_date: check_movie.release_date,
+        image_url: check_movie.poster_path,
+        external_id: check_movie.external_id
+      })
+      .then((response)=> {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        setErrorMessage(error);
+      });
+
 
   };
 

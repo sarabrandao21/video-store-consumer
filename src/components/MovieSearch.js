@@ -29,7 +29,6 @@ const END_POINT = 'movies?query=';
   }
   return (
     <div>
-
        <form className="form" onSubmit={searchMovies}>
         <label className="label" htmlFor="query">Search Movies:</label>
         <input className="input" type="text" name="query" placeholder="Movie Title" value={query} onChange={ (e) => setQuery(e.target.value)} /> 

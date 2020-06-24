@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 
 
 function RentalLibrary(props) {
-    
+    //params[:due_date]
     return (
     <div>
             <div className="card-list"> 

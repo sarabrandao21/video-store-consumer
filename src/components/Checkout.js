@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Checkout = (props) => {
     let date = new Date();
-    date.setDate(date.getDate() + 7);
+    date.setDate(date.getDate() - 1);
     const onCheckout = () => {
         
         axios.post(`${props.url}rentals/${props.movie.title}/check-out`, {

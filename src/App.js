@@ -9,6 +9,7 @@ import CustomerList from './components/CustomerList';
 import Checkout from './components/Checkout';
 import Rentals from './components/Rentals'
 
+
 const App = (props) => {
   const URL = "http://localhost:3000/"
   const [library, setLibrary] = useState([]);
@@ -16,6 +17,8 @@ const App = (props) => {
   const [customer, setCustomer] = useState({});
   const [movie, setMovie] = useState({});
   const [rentals, setRentals] = useState([]);
+  const [customers, setCustomers] = useState([]);
+  
   //const [checkInMovie, setCheckInMovie] = useState();
   
 
@@ -50,7 +53,7 @@ const App = (props) => {
 
 
   };
-
+  
   useEffect(() => {
     axios
       .get(`${URL}/movies`)
@@ -62,28 +65,33 @@ const App = (props) => {
         setErrorMessage(error);
       });
     }, []); 
+    
 
-    const check_in = (movie_id) => { 
-      
-      let current_movie = ""
-      for(let i = 0; i < library.length; i++){
-        if (library[i].id === movie_id){
-          current_movie = library[i]
-          //setCheckInMovie(library[i])
-          //check_in_movie 
-        } 
-      }
-      
-      axios.post(`${URL}rentals/${current_movie.title}`) 
-          .then((response)=> {
-            console.log(response.data);
-          })
-          .catch((error) => {
-            setErrorMessage(error);
-          }); 
-    }
 
-   
+  useEffect(() => {
+    axios.get(`${props.url}customers`)
+    .then((response)=> {
+      console.log(response.data);
+      setCustomers(response.data);
+    }).catch((error) => {
+      setErrorMessage(error);
+      console.log(error);
+    });
+    }, []);
+
+    useEffect(() => {
+      axios
+        .get(`${URL}rentals/overdue`)
+        .then((response)=> {
+          console.log(response.data);
+          setRentals(response.data); 
+        })
+        .catch((error) => {
+          setErrorMessage(error);
+        });
+      }, []); 
+ 
+
     return  (
      
       <div className="app"> 
@@ -128,7 +136,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/customers">
-              <CustomerList url={URL} currentCustomerCallback={setCustomer}/>
+              <CustomerList url={URL} currentCustomerCallback={setCustomer} customers={customers}/>
             </Route>
 
             <Route path="/checkout">
@@ -136,7 +144,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/rentals">
-              <Rentals url={URL} checkInCallback={check_in}/>
+              <Rentals url={URL} rentals={rentals} customers={customers} library={library}/>
             </Route>
 
             <Route path="/">

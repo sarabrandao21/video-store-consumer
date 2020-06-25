@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import MovieCard from "./MovieCard";
 
 
-function RentalLibrary(props) {
-    //post check_in 
+function RentalLibrary(props) { 
+    
     return (
     <div>
         <div className="card-list"> 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Customer from './Customer';
 
+
 import './Customer.css'
 
 const CustomerList = (props) => {

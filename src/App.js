@@ -69,7 +69,7 @@ const App = (props) => {
 
 
   useEffect(() => {
-    axios.get(`${props.url}customers`)
+    axios.get(`${URL}customers`)
     .then((response)=> {
       console.log(response.data);
       setCustomers(response.data);
@@ -136,7 +136,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/customers">
-              <CustomerList url={URL} currentCustomerCallback={setCustomer} customers={customers}/>
+              <CustomerList currentCustomerCallback={setCustomer} customers={customers}/>
             </Route>
 
             <Route path="/checkout">

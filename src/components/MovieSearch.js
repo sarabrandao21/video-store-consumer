@@ -8,7 +8,7 @@ const MovieSearch = (props) => {
   const URL = "http://localhost:3000/movies?query=";
 
 
-const END_POINT = 'movies?query=';
+ const END_POINT = 'movies?query=';
 
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);

@@ -13,5 +13,11 @@
 }
 .card-list{
   display: grid;
-  grid-tempate-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+.customer-card > button {
+  align-items: center;
+}
+.customer-button{
+  width: 50%;
 }

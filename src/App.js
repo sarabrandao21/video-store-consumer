@@ -19,9 +19,7 @@ const App = (props) => {
   const [rentals, setRentals] = useState([]);
   const [customers, setCustomers] = useState([]);
   
-  //const [checkInMovie, setCheckInMovie] = useState();
   
-
   const setStateEmpty = () => {
     setMovie({});
     setCustomer({});
@@ -150,9 +148,6 @@ const App = (props) => {
             <Route path="/">
               <Home />
             </Route>
-
-            
-      
          </Switch> 
 
         </div>

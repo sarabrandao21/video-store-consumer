@@ -5,9 +5,6 @@ import RentalCard from './RentalCard';
 const Rentals = (props) => {
   const [error, setErrorMessage] = useState([]);
 
-{/* <Rentals url={URL} rentals={rentals} customers={customers} library={library}/> */}
-
-  
   const checkIn = (title, customer_id) => { 
       
       axios.post(`${URL}rentals/${title}/return`, {

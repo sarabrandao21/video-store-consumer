@@ -142,7 +142,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/rentals">
-              <Rentals url={URL} rentals={rentals} customers={customers} library={library}/>
+              <Rentals url={URL} rentals={rentals} customers={customers} library={library} currentRentalsCallback={setRentals}/>
             </Route>
 
             <Route path="/">

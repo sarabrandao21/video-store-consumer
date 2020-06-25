@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import './MovieSearch.css';
+import PropTypes from 'prop-types';
+
 
 
 const MovieSearch = (props) => {
@@ -46,6 +48,8 @@ const MovieSearch = (props) => {
 }
 
 MovieSearch.propTypes = {
-
+  url: PropTypes.string, 
+  addMovieCallback: PropTypes.func,
 }
+
 export default MovieSearch;

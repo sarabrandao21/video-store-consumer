@@ -1,5 +1,7 @@
 import React from "react";
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import './RentalLibrary.css'
 
 const Checkout = (props) => {
     let date = new Date();
@@ -30,9 +32,20 @@ const Checkout = (props) => {
           );
       }else {
           return (
-            <h1> Select customer and movie for checkout </h1>
+            <div className="check-out"> 
+              <h1> Select customer and movie for checkout </h1>
+            </div>
           );
         }
+}
+
+//<Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
+
+Checkout.propTypes = {
+  setStateEmpty: PropTypes.func, 
+  movie: PropTypes.object, 
+  customer: PropTypes.object, 
+  url: PropTypes.string, 
 }
 
 export default Checkout;

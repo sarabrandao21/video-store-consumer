@@ -1,5 +1,6 @@
 import React from 'react';
 import './Customer.css'
+import PropTypes from 'prop-types';
 
 const Customer = (props) => {
 
@@ -22,6 +23,9 @@ const Customer = (props) => {
 }
 
 
-
+Customer.propTypes = {
+  customer: PropTypes.object, 
+  currentCustomerCallback: PropTypes.func, 
+}
 
 export default Customer; 

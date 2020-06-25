@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from "./MovieCard";
 import PropTypes from 'prop-types';
+import './RentalLibrary.css'
 
 function RentalLibrary(props) { 
     
     return (
     <div>
-        <div className="card-list"> 
+        <div className="rental-list"> 
             { props.library.map(movie => (
                 <MovieCard movie={movie} key={movie.external_id} currentMovieCallback={props.currentMovieCallback}/>
             ))}

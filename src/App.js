@@ -7,6 +7,8 @@ import './App.css';
 import MovieSearch from './components/MovieSearch';
 import CustomerList from './components/CustomerList';
 import Checkout from './components/Checkout';
+import Rentals from './components/Rentals'
+
 
 const App = (props) => {
   const URL = "http://localhost:3000/"
@@ -14,6 +16,16 @@ const App = (props) => {
   const [error, setErrorMessage] = useState([]);
   const [customer, setCustomer] = useState({});
   const [movie, setMovie] = useState({});
+  const [rentals, setRentals] = useState([]);
+  const [customers, setCustomers] = useState([]);
+  
+  //const [checkInMovie, setCheckInMovie] = useState();
+  
+
+  const setStateEmpty = () => {
+    setMovie({});
+    setCustomer({});
+  }
 
   const addMovie = (check_movie) => {
     for (let i = 0; i < library.length; i++) {
@@ -41,7 +53,7 @@ const App = (props) => {
 
 
   };
-
+  
   useEffect(() => {
     axios
       .get(`${URL}/movies`)
@@ -53,8 +65,33 @@ const App = (props) => {
         setErrorMessage(error);
       });
     }, []); 
+    
 
-   
+
+  useEffect(() => {
+    axios.get(`${props.url}customers`)
+    .then((response)=> {
+      console.log(response.data);
+      setCustomers(response.data);
+    }).catch((error) => {
+      setErrorMessage(error);
+      console.log(error);
+    });
+    }, []);
+
+    useEffect(() => {
+      axios
+        .get(`${URL}rentals/overdue`)
+        .then((response)=> {
+          console.log(response.data);
+          setRentals(response.data); 
+        })
+        .catch((error) => {
+          setErrorMessage(error);
+        });
+      }, []); 
+ 
+
     return  (
      
       <div className="app"> 
@@ -99,11 +136,15 @@ const App = (props) => {
             </Route>
 
             <Route path="/customers">
-              <CustomerList url={URL} currentCustomerCallback={setCustomer}/>
+              <CustomerList url={URL} currentCustomerCallback={setCustomer} customers={customers}/>
             </Route>
 
             <Route path="/checkout">
-              <Checkout movie={movie} customer={customer} url={URL}/>
+              <Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
+            </Route>
+
+            <Route path="/rentals">
+              <Rentals url={URL} rentals={rentals} customers={customers} library={library}/>
             </Route>
 
             <Route path="/">

@@ -1,5 +1,6 @@
 import React from 'react';
 import './MovieCard.css'
+import PropTypes from 'prop-types';
 
 export default function MovieCard(props) {
 
@@ -18,4 +19,12 @@ export default function MovieCard(props) {
   );
 }
 
+
+MovieCard.propTypes = {
+  movie: PropTypes.object,
+  showAddToLibrary: PropTypes.bool,
+  addMovieCallback: PropTypes.func,
+  currentMovieCallback: PropTypes.func
+
+}
 

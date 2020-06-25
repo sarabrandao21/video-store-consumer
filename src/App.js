@@ -19,7 +19,6 @@ const App = (props) => {
   const [rentals, setRentals] = useState([]);
   const [customers, setCustomers] = useState([]);
   
-  //const [checkInMovie, setCheckInMovie] = useState();
   
 
   const setStateEmpty = () => {
@@ -144,7 +143,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/rentals">
-              <Rentals url={URL} rentals={rentals} customers={customers} library={library}/>
+              <Rentals url={URL} rentals={rentals} customers={customers} library={library} currentRentalsCallback={setRentals}/>
             </Route>
 
             <Route path="/">

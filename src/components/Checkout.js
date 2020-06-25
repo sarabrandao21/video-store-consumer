@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const Checkout = (props) => {
     let date = new Date();
@@ -33,6 +34,15 @@ const Checkout = (props) => {
             <h1> Select customer and movie for checkout </h1>
           );
         }
+}
+
+//<Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
+
+Checkout.propTypes = {
+  setStateEmpty: PropTypes.func, 
+  movie: PropTypes.object, 
+  customer: PropTypes.object, 
+  url: PropTypes.string, 
 }
 
 export default Checkout;

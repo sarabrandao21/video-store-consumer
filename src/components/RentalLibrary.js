@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from "./MovieCard";
-
+import PropTypes from 'prop-types';
 
 function RentalLibrary(props) { 
     
@@ -13,6 +13,11 @@ function RentalLibrary(props) {
         </div>
     </div>
     );
+}
+
+RentalLibrary.propTypes = {
+    library: PropTypes.array,
+    currentMovieCallback: PropTypes.func
 }
 
 export default RentalLibrary;

@@ -22,10 +22,10 @@ const Checkout = (props) => {
       const movieTitle = props.movie.title
       if(movieTitle !== undefined && customerName !== undefined ){
           return (
-              <div>
+              <div className="check-out">
                 <h1>Details for {customerName} checkout</h1>
                 <p>You are checking out {movieTitle.toString()} due by {date.toString()}</p>
-                <button className="add-movie-button" onClick={onCheckout}> confirm checkout </button>
+                <button className="checkout-button" onClick={onCheckout}> confirm checkout </button>
               </div>
           );
       }else {

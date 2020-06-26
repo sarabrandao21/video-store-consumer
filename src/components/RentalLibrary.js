@@ -9,7 +9,7 @@ function RentalLibrary(props) {
     <div>
         <div className="rental-list"> 
             { props.library.map(movie => (
-                <MovieCard movie={movie} key={movie.external_id} currentMovieCallback={props.currentMovieCallback}/>
+                <MovieCard movie={movie} key={movie.external_id} showSelectMovie currentMovieCallback={props.currentMovieCallback}/>
             ))}
         </div>
     </div>

@@ -14,6 +14,8 @@ const Checkout = (props) => {
           title: props.movie.title
         }).then((response) => {
           console.log(response);
+          props.updateCustomer(response.data.customer);
+
         }).catch((error) => {
           console.log(error);
         });

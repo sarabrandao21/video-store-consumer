@@ -19,10 +19,19 @@ const App = (props) => {
   const [rentals, setRentals] = useState([]);
   const [customers, setCustomers] = useState([]);
   
-  
   const setStateEmpty = () => {
     setMovie({});
     setCustomer({});
+  }
+
+  const updateCustomer = (newCustomer) => {
+    setCustomer(newCustomer);
+    const customerIndex = customers.findIndex(c => c.id === newCustomer.id);
+   
+    let newCustomers = [...customers];
+    newCustomers[customerIndex] = newCustomer;
+
+    setCustomers(newCustomers);
   }
 
   const addMovie = (check_movie) => {
@@ -138,7 +147,7 @@ const App = (props) => {
             </Route>
 
             <Route path="/checkout">
-              <Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
+              <Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} updateCustomer={updateCustomer} url={URL}/>
             </Route>
 
             <Route path="/rentals">

@@ -3,8 +3,7 @@ import './Customer.css'
 import PropTypes from 'prop-types';
 
 const Customer = (props) => {
-
-
+  
   return (
       <div className="customer-card"> 
         <div className="customer-info">
@@ -14,6 +13,7 @@ const Customer = (props) => {
         </div> 
         <div className="acct-info">
           <p> Checked Out Count: {props.customer.movies_checked_out_count}</p>
+          
           <p> Account Credit: ${props.customer.account_credit}</p>
         </div>
       <button className="customer-button" onClick={ () => props.currentCustomerCallback(props.customer)}> Select Customer </button>

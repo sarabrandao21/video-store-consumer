@@ -29,7 +29,7 @@ const Checkout = (props) => {
               <div className="check-out">
                 <h1>Details for {customerName} checkout</h1>
                 <p>You are checking out {movieTitle.toString()} due by {date.toString()}</p>
-                <button className="checkout-button" onClick={onCheckout}> confirm checkout </button>
+                <button className="add-movie-button" onClick={onCheckout}> confirm checkout </button>
               </div>
           );
       }else {
@@ -40,8 +40,6 @@ const Checkout = (props) => {
           );
         }
 }
-
-//<Checkout setStateEmpty={setStateEmpty} movie={movie} customer={customer} url={URL}/>
 
 Checkout.propTypes = {
   setStateEmpty: PropTypes.func, 

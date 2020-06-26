@@ -1,0 +1,29 @@
+.checkin-button {
+    display: inline;
+    padding: .5rem;
+    background: transparent;
+    box-shadow: 0 0 0 1px #bebebe;
+    color: white;
+    border: none;
+    border-radius: .25rem;
+    margin-top: 1rem;
+    margin-left: 10%;
+    width: 83%;
+  }
+
+  .checkin-button:hover {
+    background-color: #85051d;
+}
+
+.checkin-movie-title {
+    width: 100%;
+}
+
+.rental-card {
+    display: grid;
+    grid-template-rows: 60% 40%;
+    border: 1px white solid;
+    text-align: center;
+    margin: 5%;
+    padding: 3%;
+}

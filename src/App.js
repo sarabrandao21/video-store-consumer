@@ -97,7 +97,8 @@ const App = (props) => {
           setErrorMessage(error);
         });
       }, []); 
- 
+
+     
 
     return  (
      
@@ -120,16 +121,20 @@ const App = (props) => {
                 <Link to="/customers"> Customers </Link>
               </li>
               <li>
+                <Link to="/rentals/overdue">Checkin</Link>
+              </li>
+              <li>
                 <Link to="/checkout"> Checkout </Link>
               </li>
+              
             </ul>
           </nav>
-
+      
           <section className="current-selected"> 
-             <p> Selected Customer: {customer.name}</p> 
+             {customer.name && <p> Selected Customer: {customer.name}</p>}
             <div> 
-              <p> Selected Movie: {movie.title}</p>
-              <img className="movie-card--image" src={`${movie.image_url}`} alt={movie.title} width="60px" height="80px"/>
+              {movie.title && <p> Selected Movie: {movie.title}</p>}
+              {movie.image_url && <img className="movie-card--image" src={`${movie.image_url}`} alt={movie.title} width="60px" height="80px"/>}
             </div>
           </section>
 
@@ -153,7 +158,7 @@ const App = (props) => {
             <Route path="/rentals">
               <Rentals url={URL} rentals={rentals} customers={customers} library={library} currentRentalsCallback={setRentals}/>
             </Route>
-
+          
             <Route path="/">
               <Home />
             </Route>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './RentalCard.css'
 
 export default function RentalCard(props) {
   const onClickReturn = () => {
@@ -13,13 +14,15 @@ export default function RentalCard(props) {
       props.currentRentalsCallback(newRentals);
     }
   return (
-  <div className="movie-card">
-    <div className="class-content"> 
-      <h2 className='card--title'> Movie Rented: {props.rental.title} </h2>
-      <p className="subtitle"><small>Name: {props.rental.name}</small></p>
-    </div>
-    <button className="add-movie-button" onClick={onClickReturn}> Check in  </button>
-  </div>
+        
+        <div className="rental-card">
+            <div className="class-content"> 
+            <h2 className='checkin-movie-title'> Movie Rented: {props.rental.title} </h2>
+            <p className="subtitle"><small>Name: {props.rental.name}</small></p>
+            </div>
+            <button className="checkin-button" onClick={onClickReturn}> Check in  </button>
+        </div>
+
   );
 }
 
